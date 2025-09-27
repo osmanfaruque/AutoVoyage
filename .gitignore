@@ -37,3 +37,19 @@ serviceAccountKey.json
 *.sln
 *.sw?
 *.txt
+
+# --- Project-specific local/OS/service ignores (added) ---
+# Keep client build, caches, env and node modules local only
+client-a11/dist/
+client-a11/.firebase/
+client-a11/node_modules/
+client-a11/.env
+client-a11/.firebaserc
+
+# Keep server-side build/caches, env, keys and node modules local only
+server-a11/.vercel/
+server-a11/node_modules/
+server-a11/.env
+server-a11/serviceAccountKey.json
+
+# End of added patterns
