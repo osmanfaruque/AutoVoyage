@@ -1,0 +1,176 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@import "@theme-toggles/react/css/Classic.css";
+
+/* Light Mode Palette */
+:root {
+  --primary-blue: #3498db;
+  --secondary-blue: #2980b9;
+  --accent-orange: #e74c3c;
+  --background: #f8f9fa;
+  --section-background: #ffffff;
+  --section-background-alt: #f2f2f2;
+  --card-background: #ffffff;
+  --header-footer-bg: #34495e;
+  --text-primary: #343a40;
+  --text-secondary: #6c757d;
+  --text-inverted: #ecf0f1;
+  --border: #ced4da;
+  --link: #3498db;
+  --link-hover: #2980b9;
+  --success: #28a745;
+  --warning: #ffc107;
+  --error: #dc3545;
+}
+
+/* Dark Mode Palette */
+[data-theme="dark"] {
+  --primary-purple: #8e44ad;
+  --secondary-purple: #9b59b6;
+  --accent-yellow: #f39c12;
+  --background: #343a40;
+  --section-background: #495057;
+  --card-background: #2c3e50;
+  --header-footer-bg: #2c3e50;
+  --text-primary: #e9ecef;
+  --text-secondary: #bdc3c7;
+  --text-inverted: #bdc3c7;
+  --border: #6c757d;
+  --link: #9b59b6;
+  --link-hover: #8e44ad;
+  --success: #218838;
+  --warning: #ffc107;
+  --error: #dc3545;
+
+  /* Overriding light theme vars for dark mode */
+  --primary-blue: var(--primary-purple);
+  --secondary-blue: var(--secondary-purple);
+  --accent-orange: var(--accent-yellow);
+  --header-footer-bg: #2c3e50;
+  --text-inverted: #bdc3c7;
+  --link-hover: var(--link-hover);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: "Poppins", "Roboto", "Montserrat", sans-serif;
+}
+
+/* General styles */
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: var(--secondary-blue);
+}
+
+[data-theme="dark"] .btn-primary {
+  background-color: var(--primary-purple);
+}
+[data-theme="dark"] .btn-primary:hover {
+  background-color: var(--secondary-purple);
+}
+
+.swal2-container-custom {
+  backdrop-filter: blur(5px);
+}
+
+/* Custom Navbar Hover Styles */
+.navbar .menu a:hover,
+.navbar .btn-ghost:hover {
+  color: var(--accent-orange) !important;
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .navbar .menu a:hover,
+[data-theme="dark"] .navbar .btn-ghost:hover {
+  color: var(--accent-yellow) !important;
+}
+
+/* Custom Footer Hover Styles */
+.footer a.link:hover {
+  color: var(--accent-orange) !important;
+}
+
+[data-theme="dark"] .footer a.link:hover {
+  color: var(--accent-yellow) !important;
+}
+
+/* ✅ PD COMPLIANT: Enhanced Table Styling */
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table thead tr {
+  background-color: hsl(var(--b3));
+  border-bottom: 2px solid hsl(var(--b2));
+}
+
+.table thead th {
+  font-weight: 700;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 2px solid hsl(var(--b2));
+}
+
+.table tbody tr {
+  border-bottom: 1px solid hsl(var(--b2));
+  transition: all 0.2s ease;
+}
+
+/* ✅ PD: Alternating row colors */
+.table tbody tr:nth-child(even) {
+  background-color: hsl(var(--b1));
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: hsl(var(--b1) / 0.5);
+}
+
+/* ✅ PD: Hover effects with light shadow */
+.table tbody tr:hover {
+  background-color: hsl(var(--b2)) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+/* Button color fixes for exact PD compliance */
+.btn-info {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.btn-error {
+  background-color: #ef4444;
+  border-color: #ef4444;
+  color: white;
+}
+
+.btn-error:hover {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}

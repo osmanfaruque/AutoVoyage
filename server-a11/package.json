@@ -1,0 +1,22 @@
+{
+  "name": "server-a11",
+  "version": "1.0.0",
+  "description": "This repository contains the robust backend API for the Car Rental System. It is responsible for managing car inventory, handling user authentication by verifying Firebase ID tokens, processing car bookings, and providing real-time data updates to the frontend.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "firebase-admin": "^13.4.0",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.16.0"
+  }
+}
