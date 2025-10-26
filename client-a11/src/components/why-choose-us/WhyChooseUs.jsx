@@ -79,9 +79,9 @@ const WhyChooseUs = () => {
     };
 
     return (
-        <section className="py-20 bg-base-200 overflow-x-hidden">
-            <div className="container mx-auto px-4">
-                <h2 className="text-4xl font-bold text-center mb-16">Why Choose AutoVoyage?</h2>
+        <section className="py-12 sm:py-16 lg:py-20 bg-base-200 overflow-x-hidden">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-14 lg:mb-16">Why Choose AutoVoyage?</h2>
                 <div className="relative">
                     {/* Vertical line for desktop view */}
                     <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary -translate-x-1/2 hidden md:block" aria-hidden="true"></div>

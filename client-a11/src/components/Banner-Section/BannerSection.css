@@ -3,17 +3,37 @@
     color: white !important;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 50%;
-    width: 44px !important;
-    height: 44px !important;
+    width: 32px !important;
+    height: 32px !important;
     transition: background-color 0.3s ease;
 }
 
+@media (min-width: 640px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 44px !important;
+        height: 44px !important;
+    }
+}
+
 .swiper-button-next {
-    right: 25px !important;
+    right: 10px !important;
+}
+
+@media (min-width: 640px) {
+    .swiper-button-next {
+        right: 25px !important;
+    }
 }
 
 .swiper-button-prev {
-    left: 25px !important;
+    left: 10px !important;
+}
+
+@media (min-width: 640px) {
+    .swiper-button-prev {
+        left: 25px !important;
+    }
 }
 
 .swiper-button-next:hover,
@@ -23,6 +43,13 @@
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-    font-size: 20px !important;
+    font-size: 16px !important;
     font-weight: bold;
+}
+
+@media (min-width: 640px) {
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 20px !important;
+    }
 } 

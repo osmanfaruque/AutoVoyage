@@ -59,7 +59,7 @@ const NavBar = () => {
     <>
       <li>
         <a 
-          href="#banner" 
+          href="#root" 
           onClick={(e) => handleSectionClick(e, 'banner')}
           className="cursor-pointer"
         >
@@ -103,7 +103,7 @@ const NavBar = () => {
             <NavLink to="/my-cars">My Cars</NavLink>
           </li>
           <li>
-            <NavLink to="/my-bookings">My Bookings</NavLink>
+            <Link to="/my-bookings">My Bookings</Link>
           </li>
         </>
       ) : (<></>
@@ -113,16 +113,16 @@ const NavBar = () => {
 
   return (
     <div
-      className="navbar sticky top-0 z-50 bg-base-100 shadow-md"
+      className="navbar sticky top-0 z-50 bg-base-100 shadow-md px-2 sm:px-4 lg:px-6"
       style={{
         backgroundColor: "var(--header-footer-bg)",
         color: "var(--text-inverted)",
       }}
     >
-      <div className="navbar-start flex items-center justify-start pl-20 gap-2 sm:gap-4">
+      <div className="navbar-start flex items-center gap-1 sm:gap-2">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <GiHamburgerMenu className="text-3xl" />
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-sm lg:hidden p-1">
+            <GiHamburgerMenu className="text-2xl sm:text-3xl" />
           </div>
           <ul
             tabIndex={0}
@@ -135,20 +135,20 @@ const NavBar = () => {
             {navLinks}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl">
-          <img src={logo} alt="AutoVoyage Logo" className="w-12 h-12" />
-          <span className="hidden sm:inline text-2xl font-bold">
+        <Link to="/" className="btn btn-ghost btn-sm sm:btn-md text-base sm:text-xl px-1 sm:px-4">
+          <img src={logo} alt="AutoVoyage Logo" className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+          <span className="hidden sm:inline text-lg sm:text-xl lg:text-2xl font-bold">
             AutoVoyage
           </span>
         </Link>
       </div>
       <div className="navbar-center max-lg:hidden flex">
-        <ul className="menu menu-horizontal px-1 text-lg">
+        <ul className="menu menu-horizontal px-1 text-base lg:text-lg">
             {navLinks}
         </ul>
       </div>
-      <div className="navbar-end flex items-center justify-end pr-20 gap-2 sm:gap-4">
-        <ThemeToggle className="text-4xl" />
+      <div className="navbar-end flex items-center gap-1 sm:gap-2 lg:gap-4">
+        <ThemeToggle className="text-2xl sm:text-3xl lg:text-4xl" />
         {currentUser ? (
           <div
             className="tooltip tooltip-bottom"
@@ -158,9 +158,9 @@ const NavBar = () => {
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost btn-circle avatar"
+                className="btn btn-ghost btn-circle btn-sm sm:btn-md avatar"
               >
-                <div className="w-12 rounded-full border-2 border-gray-300">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full border-2 border-gray-300">
                   <img
                     alt="User avatar"
                     src={
@@ -186,10 +186,10 @@ const NavBar = () => {
           </div>
         ) : (
           <>
-            <Link to="/login" className="btn">
+            <Link to="/login" className="btn btn-sm sm:btn-md">
               Log-in
             </Link>
-            <Link to="/register" className="btn">
+            <Link to="/register" className="btn btn-sm sm:btn-md hidden sm:inline-flex">
               Register
             </Link>
           </>

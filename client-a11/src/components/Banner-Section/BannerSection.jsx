@@ -46,25 +46,25 @@ const BannerSection = () => {
                 disableOnInteraction: false,
             }}
             loop={true}
-            className="w-full h-[70vh] md:h-[60vh]"
+            className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]"
             id='banner'
         >
             {slides.map((slide, index) => (
                 <SwiperSlide key={index}>
                     <div
-                        className="hero min-h-[70vh] md:min-h-[60vh] bg-cover bg-center bg-no-repeat"
+                        className="hero min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] bg-cover bg-center bg-no-repeat"
                         style={{ backgroundImage: `url(${slide.imageUrl})` }}
                     >
                         <div className="hero-overlay bg-opacity-60"></div>
-                        <div className="hero-content text-center text-neutral-content">
-                            <div className="flex flex-col items-center justify-center gap-6 md:gap-8">
-                                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+                        <div className="hero-content text-center text-neutral-content px-4">
+                            <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 md:gap-8 max-w-4xl">
+                                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
                                     AutoVoyage <br /> {slide.slogan}
                                 </h1>
-                                <p className="text-base md:text-lg" style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.5)' }}>
+                                <p className="text-sm sm:text-base md:text-lg lg:text-xl" style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.5)' }}>
                                     Your Next Car Awaits You.
                                 </p>
-                                <Link to="/available-cars" className="btn btn-primary">
+                                <Link to="/available-cars" className="btn btn-primary btn-sm sm:btn-md lg:btn-lg">
                                     View Available Cars
                                 </Link>
                             </div>

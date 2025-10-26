@@ -92,22 +92,22 @@ const SpecialOffers = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-base-200 to-base-300 overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-base-200 to-base-300 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-14 lg:mb-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex justify-center items-center gap-3 mb-4">
-            <FaPercentage className="text-4xl text-primary" />
-            <h2 className="text-4xl md:text-5xl font-bold">Special Offers</h2>
-            <FaPercentage className="text-4xl text-primary" />
+          <div className="flex justify-center items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+            <FaPercentage className="text-2xl sm:text-3xl lg:text-4xl text-primary" />
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Special Offers</h2>
+            <FaPercentage className="text-2xl sm:text-3xl lg:text-4xl text-primary" />
           </div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             Don't miss out on these amazing deals! Limited time offers to make
             your car rental experience even better.
           </p>

@@ -7,11 +7,11 @@ const ContactUs = () => {
     const { theme } = useTheme();
 
     return (
-        <div className={`py-12 ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-base-200 text-black'}`}>
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold">Contact Us</h2>
-                    <p className="text-lg mt-2">Have questions? We'd love to hear from you.</p>
+        <div className={`py-8 sm:py-10 lg:py-12 ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-base-200 text-black'}`}>
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+                    <h2 className="text-3xl sm:text-4xl font-bold">Contact Us</h2>
+                    <p className="text-base sm:text-lg mt-2">Have questions? We'd love to hear from you.</p>
                 </div>
                 <div className="flex flex-wrap -mx-4 items-center">
                     <div className="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
