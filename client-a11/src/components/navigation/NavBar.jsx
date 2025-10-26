@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useLocation, useNavigate } from "react-router";
 import { useAuth } from "../../contexts/AuthProvider";
 import ThemeToggle from "../shared/ThemeToggle";
 import { notifySuccess } from "../../components/shared/ToastNotification";
@@ -10,6 +10,8 @@ import logo from "/Icons/favicon.svg";
 
 const NavBar = () => {
   const { currentUser, logout } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     logout()
@@ -29,10 +31,69 @@ const NavBar = () => {
       });
   };
 
+  const smoothScrollToSection = (sectionId) => {
+    // If we're already on homepage, just scroll
+    if (location.pathname === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // Navigate to homepage, then scroll after navigation
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  };
+
+  const handleSectionClick = (e, sectionId) => {
+    e.preventDefault();
+    smoothScrollToSection(sectionId);
+  };
+
   const navLinks = (
     <>
-      <li><NavLink to="/">Home</NavLink></li>
+      <li>
+        <a 
+          href="#banner" 
+          onClick={(e) => handleSectionClick(e, 'banner')}
+          className="cursor-pointer"
+        >
+          Home
+        </a>
+      </li>
       <li><NavLink to="/available-cars">Available Cars</NavLink></li>
+      <li>
+        <a 
+          href="#offers" 
+          onClick={(e) => handleSectionClick(e, 'offers')}
+          className="cursor-pointer"
+        >
+          Offers
+        </a>
+      </li>
+      <li>
+        <a 
+          href="#why-us" 
+          onClick={(e) => handleSectionClick(e, 'why-us')}
+          className="cursor-pointer"
+        >
+          Why Us
+        </a>
+      </li>
+      <li>
+        <a 
+          href="#contact" 
+          onClick={(e) => handleSectionClick(e, 'contact')}
+          className="cursor-pointer"
+        >
+          Contact
+        </a>
+      </li>
       {currentUser ? (
         <>
           <li>
@@ -52,7 +113,7 @@ const NavBar = () => {
 
   return (
     <div
-      className="navbar bg-base-100 shadow-sm"
+      className="navbar sticky top-0 z-50 bg-base-100 shadow-md"
       style={{
         backgroundColor: "var(--header-footer-bg)",
         color: "var(--text-inverted)",

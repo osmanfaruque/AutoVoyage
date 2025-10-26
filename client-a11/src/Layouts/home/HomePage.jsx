@@ -7,12 +7,20 @@ import SpecialOffers from '../../components/offers-section/SpecialOffers';
 
 const HomePage = () => {
     return (
-        <div className='bg-var(--background) flex flex-col gap-10'>
-            <BannerSection />
+        <div className='flex flex-col gap-10'>
+            <section id="banner">
+                <BannerSection />
+            </section>
             <RecentListings />
-            <SpecialOffers /> 
-            <WhyChooseUs />
-            <ContactUs/>
+            <section id="offers">
+                <SpecialOffers />
+            </section>
+            <section id="why-us">
+                <WhyChooseUs />
+            </section>
+            <section id="contact">
+                <ContactUs/>
+            </section>
         </div>
     );
 };

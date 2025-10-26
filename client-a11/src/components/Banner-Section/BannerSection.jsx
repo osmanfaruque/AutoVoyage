@@ -47,6 +47,7 @@ const BannerSection = () => {
             }}
             loop={true}
             className="w-full h-[70vh] md:h-[60vh]"
+            id='banner'
         >
             {slides.map((slide, index) => (
                 <SwiperSlide key={index}>

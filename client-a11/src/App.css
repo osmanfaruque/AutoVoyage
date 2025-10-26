@@ -2,6 +2,11 @@
 @plugin "daisyui";
 @import "@theme-toggles/react/css/Classic.css";
 
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Light Mode Palette */
 :root {
   --primary-blue: #3498db;
