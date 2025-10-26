@@ -84,25 +84,25 @@ const WhyChooseUs = () => {
                 <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-14 lg:mb-16">Why Choose AutoVoyage?</h2>
                 <div className="relative">
                     {/* Vertical line for desktop view */}
-                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary -translate-x-1/2 hidden md:block" aria-hidden="true"></div>
+                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary -translate-x-1/2 hidden lg:block" aria-hidden="true"></div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-8 sm:gap-y-10 lg:gap-y-12 items-center">
                         {features.map((feature, index) => {
                             const isEven = index % 2 === 0;
 
                             const cardContent = (
                                 <motion.div
-                                    className="card bg-base-100 shadow-xl p-6 h-full"
+                                    className="card bg-base-100 shadow-xl p-4 sm:p-5 lg:p-6 h-full"
                                     initial="offscreen"
                                     whileInView="onscreen"
                                     viewport={{ amount: 0.5 }}
                                     variants={isEven ? cardVariantsLeft : cardVariantsRight}
                                 >
-                                    <div className={`flex items-center gap-6 h-full ${!isEven && 'md:flex-row-reverse'}`}>
-                                        <figure className="text-primary">{feature.icon}</figure>
-                                        <div className={`card-body p-0 ${!isEven && 'md:text-right'}`}>
-                                            <h3 className="card-title text-2xl">{feature.title}</h3>
-                                            <p className="text-base">{feature.description}</p>
+                                    <div className={`flex items-center gap-4 sm:gap-5 lg:gap-6 h-full ${!isEven && 'lg:flex-row-reverse'}`}>
+                                        <figure className="text-primary text-3xl sm:text-4xl lg:text-5xl">{feature.icon}</figure>
+                                        <div className={`card-body p-0 ${!isEven && 'lg:text-right'}`}>
+                                            <h3 className="card-title text-lg sm:text-xl lg:text-2xl">{feature.title}</h3>
+                                            <p className="text-sm sm:text-base">{feature.description}</p>
                                         </div>
                                     </div>
                                 </motion.div>
@@ -114,9 +114,9 @@ const WhyChooseUs = () => {
                                     whileInView="onscreen"
                                     viewport={{ amount: 0.5 }}
                                     variants={animationVariants}
-                                    className="hidden md:flex items-center justify-center"
+                                    className="hidden lg:flex items-center justify-center"
                                 >
-                                    <Lottie animationData={feature.animation} loop={true} style={{ height: 200 }} />
+                                    <Lottie animationData={feature.animation} loop={true} style={{ height: 180, maxHeight: 200 }} />
                                 </motion.div>
                             );
                             

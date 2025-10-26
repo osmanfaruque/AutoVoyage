@@ -56,30 +56,30 @@ const RecentListings = () => {
   }
 
   return (
-    <section className="py-20 bg-base-100">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16">
+    <section className="py-12 sm:py-16 lg:py-20 bg-base-100">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 lg:mb-16">
           Recent Listings
         </h2>
 
         {cars.length === 0 ? (
           <div className="text-center py-12">
-            <div className="text-6xl mb-4">🚗</div>
-            <p className="text-xl text-gray-500 mb-4">No cars available yet.</p>
+            <div className="text-5xl sm:text-6xl mb-4">🚗</div>
+            <p className="text-lg sm:text-xl text-gray-500 mb-4">No cars available yet.</p>
             <p className="text-gray-400 mb-6">Be the first to add your car!</p>
-            <Link to="/add-car" className="btn btn-primary btn-lg">
+            <Link to="/add-car" className="btn btn-primary btn-md sm:btn-lg">
               Add Your First Car
             </Link>
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 lg:gap-8">
               {cars.map((car) => (
                 <div
                   key={car._id}
-                  className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                  className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] sm:hover:scale-105"
                 >
-                  <figure className="h-48">
+                  <figure className="h-44 sm:h-48">
                     <img
                       src={
                         car.imageUrl ||
@@ -93,8 +93,8 @@ const RecentListings = () => {
                       }}
                     />
                   </figure>
-                  <div className="card-body">
-                    <h3 className="card-title text-lg font-bold">
+                  <div className="card-body p-4 sm:p-6">
+                    <h3 className="card-title text-base sm:text-lg font-bold">
                       {car.model}
                     </h3>
 
@@ -108,11 +108,11 @@ const RecentListings = () => {
                     )}
 
                     <div className="flex justify-between items-center mt-2">
-                      <span className="text-2xl font-bold text-primary">
+                      <span className="text-xl sm:text-2xl font-bold text-primary">
                         ${car.dailyRentalPrice}/day
                       </span>
                       <span
-                        className={`badge ${
+                        className={`badge badge-sm sm:badge-md ${
                           car.availability ? "badge-success" : "badge-error"
                         }`}
                       >
@@ -120,7 +120,7 @@ const RecentListings = () => {
                       </span>
                     </div>
 
-                    <div className="text-sm text-gray-500 space-y-1 mt-3">
+                    <div className="text-xs sm:text-sm text-gray-500 space-y-1 mt-3">
                       {car.location && <p>📍 {car.location}</p>}
                       <p>🚗 Bookings: {car.bookingCount || 0}</p>
                       <p>👤 Owner: {car.ownerName}</p>
@@ -143,10 +143,10 @@ const RecentListings = () => {
             </div>
 
             {/* View All Cars Button */}
-            <div className="text-center mt-12">
+            <div className="text-center mt-8 sm:mt-10 lg:mt-12">
               <Link
                 to="/available-cars"
-                className="btn btn-outline btn-primary btn-lg"
+                className="btn btn-outline btn-primary btn-md sm:btn-lg"
               >
                 View All Cars ({cars.length < 6 ? cars.length : "6+"} available)
               </Link>

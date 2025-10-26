@@ -114,8 +114,8 @@ const SpecialOffers = () => {
         </motion.div>
 
         {/* Offers Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {offers.map((offer, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 lg:gap-8">
+          {offers.map((offer) => (
             <motion.div
               key={offer.id}
               className="relative group"
@@ -130,12 +130,12 @@ const SpecialOffers = () => {
               }
             >
               <motion.div
-                className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${offer.bgGradient} p-8 text-white shadow-2xl`}
+                className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${offer.bgGradient} p-6 sm:p-7 lg:p-8 text-white shadow-2xl`}
                 variants={hoverVariants}
               >
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-4 right-4 text-8xl font-bold opacity-20">
+                  <div className="absolute top-4 right-4 text-6xl sm:text-7xl lg:text-8xl font-bold opacity-20">
                     {offer.discount.split("%")[0]}
                   </div>
                 </div>
@@ -144,7 +144,7 @@ const SpecialOffers = () => {
                 <div className="relative z-10">
                   {/* Icon */}
                   <motion.div
-                    className="mb-4"
+                    className="mb-3 sm:mb-4 text-3xl sm:text-4xl"
                     whileHover={{
                       rotate: 360,
                       transition: { duration: 0.8 },
@@ -154,20 +154,20 @@ const SpecialOffers = () => {
                   </motion.div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold mb-2">{offer.title}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2">{offer.title}</h3>
 
                   {/* Discount Badge */}
-                  <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-4">
-                    <span className="text-2xl font-black">
+                  <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4">
+                    <span className="text-xl sm:text-2xl font-black">
                       {offer.discount}
                     </span>
                   </div>
 
                   {/* Description */}
-                  <p className="text-lg mb-2 font-medium">
+                  <p className="text-base sm:text-lg mb-2 font-medium">
                     {offer.description}
                   </p>
-                  <p className="text-sm opacity-80 mb-6">{offer.terms}</p>
+                  <p className="text-xs sm:text-sm opacity-80 mb-4 sm:mb-6">{offer.terms}</p>
 
                   {/* CTA Button */}
                   <motion.div
@@ -176,7 +176,7 @@ const SpecialOffers = () => {
                   >
                     <Link
                       to={offer.buttonLink}
-                      className="inline-block bg-white text-gray-800 font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg"
+                      className="inline-block bg-white text-gray-800 font-bold py-2.5 sm:py-3 px-5 sm:px-6 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg text-sm sm:text-base"
                     >
                       {offer.buttonText} →
                     </Link>
@@ -193,16 +193,16 @@ const SpecialOffers = () => {
 
         {/* Bottom CTA */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-10 sm:mt-12 lg:mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">
             Ready to save on your next rental?
           </p>
-          <Link to="/available-cars" className="btn btn-primary btn-lg">
+          <Link to="/available-cars" className="btn btn-primary btn-md sm:btn-lg">
             Browse All Cars
           </Link>
         </motion.div>

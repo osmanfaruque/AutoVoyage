@@ -189,7 +189,7 @@ const NavBar = () => {
             <Link to="/login" className="btn btn-sm sm:btn-md">
               Log-in
             </Link>
-            <Link to="/register" className="btn btn-sm sm:btn-md hidden sm:inline-flex">
+            <Link to="/register" className="btn btn-sm sm:btn-md inline-flex">
               Register
             </Link>
           </>
